@@ -103,3 +103,6 @@ footer{color:var(--soft);font-size:0.857rem;padding:20px 0 40px;border-top:1px s
 html,body{overflow-x:hidden}
 .nh>div:first-child{min-width:0}
 .nh .pn{overflow-wrap:anywhere}
+.pct{margin-top:.35rem;display:flex;gap:.4rem;flex-wrap:wrap}
+.pct span{font-size:.8rem;background:var(--acc-soft);color:var(--acc);border-radius:4px;padding:1px 7px;font-weight:500}
+.node.milky .pct span{background:var(--milky-soft);color:var(--milky)}

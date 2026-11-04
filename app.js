@@ -70,7 +70,7 @@ function node(pr, fs, bs, opts = {}){
   const share = fs !== null ? `<div class="share">Parte de esta persona: ${pct(fs)} de la facturación y ${pct(bs)} del beneficio del proyecto. Proyecto completo: facturación ${eur(pr.f)}, beneficio ${eur(pr.b)}.${pr.note ? ' ' + esc(pr.note) : ''}</div>` : '';
   return `<div class="${cls}" data-p="${esc(pr.name)}">
     <div class="nh" onclick="this.parentNode.classList.toggle('open')">
-      <div><span class="chev">▶</span> <span class="pn">${esc(pr.name)}</span> ${pr.type === 'Milky' ? '<span class="pill m">Milky</span>' : ''}<div class="pd">${period}</div></div>
+      <div><span class="chev">▶</span> <span class="pn">${esc(pr.name)}</span> ${pr.type === 'Milky' ? '<span class="pill m">Milky</span>' : ''}<div class="pd">${period}</div>${fs !== null ? `<div class="pct"><span>${pct(fs)} de la facturación</span><span>${pct(bs)} del beneficio</span></div>` : ''}</div>
       <div class="col hide"><small>Facturación</small>${eur(f)}</div>
       <div class="col"><small>Beneficio</small>${eur(b)}</div>
       <div class="col hide"><small>Enlace</small><a href="#/proyecto/${slug(pr.name)}" onclick="event.stopPropagation()">ver proyecto</a></div>
