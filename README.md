@@ -11,6 +11,7 @@ Facturación y beneficio de cada persona del equipo, con cada importe enlazado a
 ## Qué hay dentro
 
 - **Personas**: resumen de cada persona. Al entrar, primero la base de Milkys (cerrados) y después la línea temporal de proyectos, documento a documento.
+- **Objetivos**: avance de cada persona hacia 15.000 € de facturación (Milkys cuentan hasta 7.500 €) y 6.000 € de beneficio, lo que le falta, de dónde puede salir y el ritmo mensual hasta la fecha objetivo. La fecha objetivo se cambia en la propia página (por defecto, 30/06/2027).
 - **Proyectos**: todos los proyectos de Holded con su facturación, beneficio, fechas y reparto.
 - **Cómo se calcula**: método y correcciones aplicadas sobre el resumen de Holded.
 

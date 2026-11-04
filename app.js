@@ -209,7 +209,10 @@ function route(){
   const h = decodeURIComponent(location.hash.replace(/^#\/?/, ''));
   const [k, ...rest] = h.split('/'); const arg = rest.join('/');
   window.scrollTo({top:0,left:0});
-  if (k === 'persona' && arg) viewPersona(arg);
+  const tp = document.getElementById('tip'); if (tp) tp.style.display = 'none';
+  app.classList.toggle('obj', k === 'objetivos');
+  if (k === 'objetivos') { setNav('objetivos'); window.renderObjetivos(app); }
+  else if (k === 'persona' && arg) viewPersona(arg);
   else if (k === 'proyectos') viewProyectos();
   else if (k === 'proyecto' && arg) viewProyecto(arg);
   else if (k === 'metodo') viewMetodo();
