@@ -96,3 +96,10 @@ table.list tr:hover td{background:#fbfbf9}
 footer{color:var(--soft);font-size:0.857rem;padding:20px 0 40px;border-top:1px solid var(--line)}
 @media (max-width:720px){header.top{position:static}.split{grid-template-columns:1fr}.split>div{border-right:0;border-bottom:1px solid var(--line)}.nh{grid-template-columns:1fr auto}.nh .col.hide{display:none}}
 @media print{header.top nav,.tools,.btn{display:none}.nb{display:block!important}body{background:#fff}.node,.card,.kpi{break-inside:avoid}}
+
+.tscroll{overflow-x:auto;-webkit-overflow-scrolling:touch;max-width:100%}
+.tscroll table.list{min-width:44rem}
+.tscroll table.docs{min-width:40rem}
+html,body{overflow-x:hidden}
+.nh>div:first-child{min-width:0}
+.nh .pn{overflow-wrap:anywhere}

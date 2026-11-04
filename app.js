@@ -60,8 +60,8 @@ function docRows(pr, fs, bs, q){
       <td class="r">${eur(pf)}</td><td class="r">${eur(pb)}</td></tr>`;
   }
   rows += `<tr class="sum"><td></td><td colspan="3">${q ? 'Suma de los documentos filtrados' : 'Total del proyecto'}${showPerson ? ' para esta persona' : ''}</td><td class="r">${eur(sf)}</td><td class="r">${eur(sb)}</td></tr>`;
-  return `<table class="docs"><thead><tr><th>Fecha</th><th>Documento</th><th>Cliente / proveedor y concepto</th><th class="r">Importe en el proyecto</th>
-    <th class="r">${showPerson ? 'Facturación persona' : 'Facturación'}</th><th class="r">${showPerson ? 'Beneficio persona' : 'Beneficio'}</th></tr></thead><tbody>${rows}</tbody></table>`;
+  return `<div class="tscroll"><table class="docs"><thead><tr><th>Fecha</th><th>Documento</th><th>Cliente / proveedor y concepto</th><th class="r">Importe en el proyecto</th>
+    <th class="r">${showPerson ? 'Facturación persona' : 'Facturación'}</th><th class="r">${showPerson ? 'Beneficio persona' : 'Beneficio'}</th></tr></thead><tbody>${rows}</tbody></table></div>`;
 }
 function node(pr, fs, bs, opts = {}){
   const f = fs !== null ? pr.f*fs : pr.f, b = bs !== null ? pr.b*bs : pr.b;
@@ -148,7 +148,7 @@ function viewProyectos(){
       <td class="r">${eur(p.f)}</td><td class="r">${eur(p.b)}</td><td>${ppl.length ? ppl.map(esc).join(', ') : '<span class="muted">Sin asignar</span>'}</td></tr>`;
   }
   app.innerHTML = `<h1>Proyectos</h1><p class="sub">Todos los proyectos de Holded con sus cifras conciliadas y las personas que participan.</p>
-    <table class="list"><thead><tr><th>Proyecto</th><th>Tipo</th><th>Primera factura</th><th>Última factura</th><th class="r">Docs</th><th class="r">Facturación</th><th class="r">Beneficio</th><th>Personas</th></tr></thead><tbody>${tb}</tbody></table>`;
+    <div class="tscroll"><table class="list"><thead><tr><th>Proyecto</th><th>Tipo</th><th>Primera factura</th><th>Última factura</th><th class="r">Docs</th><th class="r">Facturación</th><th class="r">Beneficio</th><th>Personas</th></tr></thead><tbody>${tb}</tbody></table></div>`;
 }
 
 function viewProyecto(name){
@@ -172,7 +172,7 @@ function viewProyecto(name){
     </div>
     ${corr.length ? `<div class="note w"><b>Correcciones sobre el resumen de Holded</b><ul>${corr.map(c => `<li>${c}</li>`).join('')}</ul></div>` : ''}
     ${p.note ? `<div class="note">${esc(p.note)}</div>` : ''}
-    <h2>Reparto</h2>${reparto ? `<table class="list"><thead><tr><th>Persona</th><th class="r">% facturación</th><th class="r">Facturación</th><th class="r">% beneficio</th><th class="r">Beneficio</th></tr></thead><tbody>${reparto}</tbody></table>` : '<p class="muted">Sin personas asignadas.</p>'}
+    <h2>Reparto</h2>${reparto ? `<div class="tscroll"><table class="list"><thead><tr><th>Persona</th><th class="r">% facturación</th><th class="r">Facturación</th><th class="r">% beneficio</th><th class="r">Beneficio</th></tr></thead><tbody>${reparto}</tbody></table></div>` : '<p class="muted">Sin personas asignadas.</p>'}
     <h2>Documentos</h2><div class="tl">${node(p, null, null, {open:true})}</div>`;
 }
 
@@ -208,7 +208,7 @@ function viewMetodo(){
 function route(){
   const h = decodeURIComponent(location.hash.replace(/^#\/?/, ''));
   const [k, ...rest] = h.split('/'); const arg = rest.join('/');
-  window.scrollTo(0,0);
+  window.scrollTo({top:0,left:0});
   if (k === 'persona' && arg) viewPersona(arg);
   else if (k === 'proyectos') viewProyectos();
   else if (k === 'proyecto' && arg) viewProyecto(arg);
