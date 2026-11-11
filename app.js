@@ -212,6 +212,8 @@ function route(){
   const tp = document.getElementById('tip'); if (tp) tp.style.display = 'none';
   app.classList.toggle('obj', k === 'objetivos');
   if (k === 'objetivos') { setNav('objetivos'); window.renderObjetivos(app); }
+  else if (k === 'auditoria') { setNav('auditoria'); window.renderAuditoria(app); }
+  else if (k === 'repaso') { setNav('repaso'); window.renderRepaso(app, arg); }
   else if (k === 'persona' && arg) viewPersona(arg);
   else if (k === 'proyectos') viewProyectos();
   else if (k === 'proyecto' && arg) viewProyecto(arg);

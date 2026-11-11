@@ -20,3 +20,10 @@ Facturación y beneficio de cada persona del equipo, con cada importe enlazado a
 - Fuente: documentos de Holded con proyecto en alguna línea (diciembre de 2023 a octubre de 2026), descargados el 02/11/2026.
 - `data.js` contiene todos los datos. `app.js` y `style.css` son la web.
 - Los totales coinciden con `RIVIA_Checks_por_persona.xlsx` y `RIVIA_Total_por_proyectos.xlsx`.
+
+## Auditoría (11/11/2026)
+
+- **Auditoría** (`#/auditoria`): tres escenarios (Holded tal cual, auditado, peor caso de IVA), todas las líneas al 10 % en rojo con su recálculo al 21 %, líneas sin IVA o con IVA raro para el tipo de proyecto, posibles duplicados y la comparación proyecto a proyecto con los checkpoints y el PANEL DE CONTROL.
+- **Repaso 1 a 1** (`#/repaso`): una persona por pantalla para la reunión. Flechas ← → del teclado para pasar, botón para marcar revisado (se guarda solo en tu navegador). Muestra objetivos (15.000 € de facturación, Milkys hasta 7.500 €; 6.000 € de beneficio) en los cuatro escenarios: Excel del equipo (TOTAL 2), Holded, auditado y peor caso.
+- Datos en `audit.js`. Excel de la auditoría: `RIVIA_Auditoria_checks.xlsx` (fuera del repo).
+- ⚠ El tipo de IVA de cada línea hay que confirmarlo con la gestoría. Nada se ha cambiado en Holded.
